@@ -28,7 +28,7 @@ public class TestBase
 		try
 		{
 			prop = new Properties();
-			 ip = new FileInputStream("C:\\Parag\\Git\\IVFmilan\\src\\main\\java\\com_Milan_config\\config.proerties");
+			 ip = new FileInputStream("C:\\Parag\\PrjectIVF\\EMRio_Project\\src\\main\\java\\Com_Embrio_Config\\config.properties");
 			try {
 				prop.load(ip);
 			} catch (IOException e) 

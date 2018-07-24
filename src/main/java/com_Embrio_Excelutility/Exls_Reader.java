@@ -24,7 +24,7 @@ import com_Embrio_Excelutility.Exls_Reader;
 
 public class Exls_Reader 
 {
-	public static String filename = "C:\\Parag\\Git\\IVFmilan\\src\\main\\java\\com_Milan_TestData\\Milandata.xlsx";
+	public static String filename = "C:\\Parag\\PrjectIVF\\EMRio_Project\\src\\main\\java\\com_Embrio_TestData\\Embriodata.xlsx";
 	public  String path;
 	public  FileInputStream fis = null;
 	public  FileOutputStream fileOut =null;

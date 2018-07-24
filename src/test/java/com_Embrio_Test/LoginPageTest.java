@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Com_Embrio_Base.TestBase;
-import com_Milan_Excelutility.Exls_Reader;
+import com_Embrio_Excelutility.Exls_Reader;
 import com_Embrio_pom.HomePage;
 import com_Embrio_pom.LoginPage;
 
@@ -23,7 +23,7 @@ public void setup()
 	TestBase.initalization();
 	Loginpage = new LoginPage();
 }
-@Test(priority=1)
+@Test(priority=1, enabled=true)
 public void InvalidusernameTest() 
 {
 	String username = reader.getCellData("LoginPage", 0, 2);	
@@ -34,7 +34,7 @@ public void InvalidusernameTest()
 	System.out.println("InvalidusernameTest is completed");
 }
 
-@Test(priority=2)
+@Test(priority=2,enabled=true)
 public void InvalidPasswordTest() 
 {
 	String username = reader.getCellData("LoginPage", 0, 3);
@@ -46,7 +46,7 @@ public void InvalidPasswordTest()
 	System.out.println("InvalidpasswordTest is completed");
 }
 
-@Test(priority=3)
+@Test(priority=3,enabled=true)
 public void ButtonEnableConditionTest()
 {
 	
