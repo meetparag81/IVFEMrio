@@ -43,7 +43,6 @@ public class TestUtil extends TestBase
 	
 	
 	
-	
 	public static void takeScreenshotAtEndOfTest1()
 	{
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -59,7 +58,7 @@ public class TestUtil extends TestBase
 		}
 	}
 	
-	public static String takescreenshot(WebDriver driver, String screenshotname)  
+	public static String takescreenshotForSkip(WebDriver driver, String screenshotname)  
 	{
 	      //below line is just to append the date format with the screenshot name to avoid duplicate names 
 			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
@@ -92,7 +91,7 @@ public class TestUtil extends TestBase
 	
 	
 	
-	public static String getScreenshot(WebDriver driver, String screenshotName) throws Exception 
+	public static String TskeScreenshotForFail(WebDriver driver, String screenshotName) 
 		{
 	        //below line is just to append the date format with the screenshot name to avoid duplicate names 
 		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
@@ -104,7 +103,14 @@ public class TestUtil extends TestBase
 	        //after execution, you could see a folder "FailedTestsScreenshots" under src folder
 	String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/"+screenshotName+dateName+".png";
 	File finalDestination = new File(destination);
-	FileUtils.copyFile(source, finalDestination);
+	try {
+		FileUtils.copyFile(source, finalDestination);
+	} 
+	catch (IOException e) 
+	{
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	        //Returns the captured file path
 	return destination;
 		}

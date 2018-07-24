@@ -61,10 +61,10 @@ public class TestBase
 		 }
 		EventFiringWebDriver e_driver = new EventFiringWebDriver(driver);
 		// Now create object of EventListerHandler to register it with EventFiringWebDriver
-			WebDriverEventListener eventListener =  new TestNGListner();
-			e_driver.register(eventListener);
+		//	WebDriverEventListener eventListener =  new TestNGListner();
+		//	e_driver.register(eventListener);
 			driver = e_driver;			
-		e_driver.register(eventListener);
+		//e_driver.register(eventListener);
 		driver = e_driver;
 		try
 		{
