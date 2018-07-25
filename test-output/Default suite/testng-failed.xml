@@ -6,9 +6,6 @@
       <class name="com_Embrio_Test.LoginPageTest">
         <methods>
           <include name="setup"/>
-          <include name="LoginTest"/>
-          <include name="ButtonEnableConditionTest"/>
-          <include name="InvalidusernameTest"/>
           <include name="InvalidPasswordTest"/>
           <include name="Teardown"/>
         </methods>
