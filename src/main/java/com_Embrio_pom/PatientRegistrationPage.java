@@ -137,10 +137,6 @@ public class PatientRegistrationPage extends TestBase
 	}
 	
 	
-	
-	
-	
-	
 	public void FillMandetoryFieldsPatient( )
 	{
 		try
