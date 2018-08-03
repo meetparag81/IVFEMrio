@@ -12,9 +12,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
+
 import com_Emrio_Test_util.TestNGListner;
 import com_Emrio_Test_util.TestUtil;
 
+@Listeners(com_Emrio_Test_util.TestNGListner.class)
 public class TestBase 
 {
 	public static WebDriver driver;

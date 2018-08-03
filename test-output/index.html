@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\paragb\AppData\Local\Temp\testng-eclipse-388562085\testng-customsuite.xml</span>
+                    <span>C:\Users\paragb\AppData\Local\Temp\testng-eclipse-151719388\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,36 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com_Embrio_Test.LoginPageTest" hash-for-method="ButtonEnableConditionTest">ButtonEnableConditionTest</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com_Embrio_Test.RegistrationPageTest" hash-for-method="SaveThePatient">SaveThePatient</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com_Embrio_Test.LoginPageTest" hash-for-method="InvalidPasswordTest">InvalidPasswordTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com_Embrio_Test.LoginPageTest" hash-for-method="InvalidusernameTest">InvalidusernameTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com_Embrio_Test.LoginPageTest" hash-for-method="LoginTest">LoginTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -132,46 +117,91 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com_Embrio_Test.LoginPageTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com_Embrio_Test.RegistrationPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ButtonEnableConditionTest">
-                  </a> <!-- ButtonEnableConditionTest -->
-                  <span class="method-name">ButtonEnableConditionTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="InvalidPasswordTest">
-                  </a> <!-- InvalidPasswordTest -->
-                  <span class="method-name">InvalidPasswordTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="InvalidusernameTest">
-                  </a> <!-- InvalidusernameTest -->
-                  <span class="method-name">InvalidusernameTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="LoginTest">
-                  </a> <!-- LoginTest -->
-                  <span class="method-name">LoginTest</span>
+                  <a name="SaveThePatient">
+                  </a> <!-- SaveThePatient -->
+                  <span class="method-name">SaveThePatient</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: cannot focus element
+  (Session info: chrome=68.0.3440.84)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;IVF111&apos;, ip: &apos;192.168.1.56&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=WIN8_1, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=WIN8_1, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\paragb\AppData\Local\Temp\scoped_dir7984_24278}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=68.0.3440.84, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d929eba63dffec5938d05d01a7367bd0
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:275)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:99)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement$1.invoke(EventFiringWebDriver.java:350)
+	at com.sun.proxy.$Proxy12.sendKeys(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.sendKeys(EventFiringWebDriver.java:373)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy11.sendKeys(Unknown Source)
+	at com_Embrio_pom.PatientRegistrationPage.FillMandetoryFieldsPatient(PatientRegistrationPage.java:212)
+	at com_Embrio_pom.PatientRegistrationPage.FillRegistrationForm(PatientRegistrationPage.java:311)
+	at com_Embrio_Test.RegistrationPageTest.SaveThePatient(RegistrationPageTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\paragb\AppData\Local\Temp\testng-eclipse-388562085\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\paragb\AppData\Local\Temp\testng-eclipse-151719388\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -180,7 +210,11 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com_Embrio_Test.LoginPageTest&quot;/&gt;
+      &lt;class name=&quot;com_Embrio_Test.RegistrationPageTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;SaveThePatient&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com_Embrio_Test.RegistrationPageTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -220,28 +254,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'InvalidusernameTest')
-data.setCell(0, 2, 'com_Embrio_Test.LoginPageTest')
-data.setCell(0, 3, 3356);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'LoginTest')
-data.setCell(1, 2, 'com_Embrio_Test.LoginPageTest')
-data.setCell(1, 3, 2694);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'InvalidPasswordTest')
-data.setCell(2, 2, 'com_Embrio_Test.LoginPageTest')
-data.setCell(2, 3, 851);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'ButtonEnableConditionTest')
-data.setCell(3, 2, 'com_Embrio_Test.LoginPageTest')
-data.setCell(3, 3, 216);
+data.setCell(0, 1, 'SaveThePatient')
+data.setCell(0, 2, 'com_Embrio_Test.RegistrationPageTest')
+data.setCell(0, 3, 9324);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -256,9 +278,24 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com_Embrio_Test.RegistrationPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">MessageForMandetoryFieldRegistrationFormTest</span>
+                <br/>
+                <span class="ignored-method-name">UploadPhotoPartnerTest</span>
+                <br/>
+                <span class="ignored-method-name">UloadPictureOFPatientTest</span>
+                <br/>
+                <span class="ignored-method-name">UloadPictureOFPartnerTest</span>
+                <br/>
+                <span class="ignored-method-name">MessageBeforeUloadPictureOFPatientTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -267,54 +304,20 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com_Embrio_Test.LoginPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com_Embrio_Test.RegistrationPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup</span>
+                <span class="method-name">Setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">InvalidusernameTest</span>
-                <span class="method-start">7235 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">SaveThePatient</span>
+                <span class="method-start">12953 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">Teardown</span>
-                <span class="method-start">10593 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">11274 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">InvalidPasswordTest</span>
-                <span class="method-start">16761 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">Teardown</span>
-                <span class="method-start">17612 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">18282 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">ButtonEnableConditionTest</span>
-                <span class="method-start">23251 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">Teardown</span>
-                <span class="method-start">23469 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">24135 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">LoginTest</span>
-                <span class="method-start">29167 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">Teardown</span>
-                <span class="method-start">31863 ms</span>
+                <span class="method-name">TearDown</span>
+                <span class="method-start">22282 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

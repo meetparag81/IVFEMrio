@@ -7,8 +7,11 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.internal.TestResult;
 
-public class TestNGListner implements ITestListener, WebDriverEventListener
+import Com_Embrio_Base.TestBase;
+
+public class TestNGListner extends TestBase implements ITestListener, WebDriverEventListener
 {
 
 	public void beforeAlertAccept(WebDriver driver) {
@@ -126,13 +129,37 @@ public class TestNGListner implements ITestListener, WebDriverEventListener
 		
 	}
 
-	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
+	public void onTestFailure(ITestResult result) 
+	{
+		if(TestResult.FAILURE== result.getStatus())
+		{
+			try 
+			{
+				TestUtil.getScreenshotFail(driver, result.getName());
+			} 
+			catch (Exception e) 
+			{
+				
+				e.printStackTrace();
+			}
+		}
+		
 		
 	}
 
-	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
+	public void onTestSkipped(ITestResult result) 
+	{
+		if(ITestResult.FAILURE==result.getStatus())
+		{
+			try 
+			{
+				TestUtil.getScreenshotskip(driver, result.getName());
+			} catch (Exception e) 
+			{
+			
+				e.printStackTrace();
+			}
+		}
 		
 	}
 
