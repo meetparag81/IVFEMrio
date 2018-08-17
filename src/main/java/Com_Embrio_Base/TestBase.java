@@ -60,7 +60,7 @@ public class TestBase
 		}	
 		else if(browsername.equals("chrome"))
 		 {
-			System.setProperty("webdriver.chrome.driver" ,"C:\\Parag\\Paragdata30032018\\Parag\\Selenium\\Selenium Setup\\chrome exe for 65\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver" ,"C:\\Parag\\Selenium\\Selenium Setup\\chrome exe for 65\\chromedriver.exe");
 			driver = new ChromeDriver();
 		 }
 		EventFiringWebDriver e_driver = new EventFiringWebDriver(driver);
@@ -90,6 +90,8 @@ public class TestBase
 			System.out.println("url is not entered");
 			
 		}
-
+		/*System.setProperty("webdriver.chrome.logfile", "E:\\Logs:\\chromedriver.log");
+		System.setProperty("webdriver.chrome.verboseLogging", "true");
+*/
 }
 }

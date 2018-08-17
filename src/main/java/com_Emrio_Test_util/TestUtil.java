@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
@@ -27,7 +28,7 @@ public class TestUtil extends TestBase
 	
 	public static void ClickOn(WebDriver driver,WebElement locator,int timeout)// used this function to wait until the element is not clickable.
 	{
-		new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeSelected(locator));
+		new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
 		locator.click();
 		
 	}
@@ -112,4 +113,13 @@ return destination;
 	
 
 }
+	public static void ScrollthePage(JavascriptExecutor js,WebDriver driver)
+	{
+		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+		js1.executeScript("scroll(0, 250);");
+		
+	}
+	
+	
+	
 }

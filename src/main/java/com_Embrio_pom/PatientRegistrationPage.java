@@ -2,6 +2,8 @@ package com_Embrio_pom;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,14 +16,16 @@ import Com_Embrio_Base.TestBase;
 import com_Embrio_Excelutility.Exls_Reader;
 import com_Emrio_Test_util.TestUtil;
 
+
+
 public class PatientRegistrationPage extends TestBase 
 {
 	
 	private @FindBy(xpath="//a[@class='dropdown-toggle'][text()='Registration']//following-sibling::div//li[1]/a")WebElement RegistrationPage;
-	private @FindBy(xpath="(//button[@class='btn btn-primary btn-sm'])[1]")WebElement LinkbuttonforAttachpagePatient; 
-	private @FindBy(xpath="(//button[@class='btn btn-primary btn-sm'])[3]")WebElement LinkbuttonForPartner; 
-	private @FindBy(xpath="(//button[@class='btn btn-success gallary-btn '])[2]")WebElement choosephoto;
-	private @FindBy(xpath="//div[@class='GallaryWrapper']/input[@class='upload']")WebElement upload;
+	private @FindBy(xpath="(//button[@class='btn btn-primary btn-sm'])[2]")WebElement LinkbuttonforAttachpagePatient; 
+	private @FindBy(xpath="(//button[@class='btn btn-primary btn-sm'])[4]")WebElement LinkbuttonForPartner; 
+	private @FindBy(xpath="(//button[@class='btn btn-success gallary-btn '])[1]")WebElement choosephoto;
+	private @FindBy(xpath="//div[@class='fileUpload btn btn-primary']")WebElement upload;
 	private @FindBy(xpath="(//button[@class='btn btn-primary'])[1]")WebElement SaveButton;
 	private @FindBy(xpath="//input[@name='txtFirstName']")WebElement patientFirstName;
 	private @FindBy(xpath="//input[@name='txtLastName']")WebElement patientLastName;
@@ -40,6 +44,8 @@ public class PatientRegistrationPage extends TestBase
 	private @FindBy(xpath="(//button[@class='btn btn-primary'])[1]")WebElement Save;
 	private @FindBy(xpath="//span[@class='toast-msg ng-binding ng-scope']")WebElement FlashMessage;
 	private @FindBy(xpath="//span[@class='toast-msg ng-binding ng-scope']") WebElement UploadMessage;
+	private @FindBy(xpath="//label[@class='col-md-12 col-sm-12 col-lg-12 control-label p-r-10']//following::button[@class='btn_view  p-l-5']/span") WebElement photoclick;
+	private @FindBy(xpath="//h4[contains (text(), 'womenphoto')]")WebElement Phototext;
 	String msg;
 	Exls_Reader reader = new Exls_Reader("C:\\Parag\\PrjectIVF\\EMRio_Project\\src\\main\\java\\com_Embrio_TestData\\Embriodata.xlsx");
 	
@@ -85,6 +91,9 @@ public class PatientRegistrationPage extends TestBase
 			System.out.println("Exception is seen");
 		}
 		upload.click();
+		/*JavascriptExecutor executor1 = (JavascriptExecutor) driver;
+		executor1.executeScript("arguments[0].click();", upload);*/
+		
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e1) 
@@ -92,12 +101,23 @@ public class PatientRegistrationPage extends TestBase
 			System.out.println("InterruptedException is seen");
 		}
 		try {
-			Runtime.getRuntime().exec("C:\\Parag\\Git\\IVFmilan\\AutoIT\\FileUpload.exe");
+			Runtime.getRuntime().exec("C:\\Parag\\Git\\IVFmilan\\AutoIT\\PartnerUpload\\FileUpload.exe");
 		} catch (IOException e) 
 		{
 			System.out.println("IOException is seen");
 		}
-		WebElement SaveButton = driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[5]")); 
+		
+		WebElement SaveButton = driver.findElement(By.xpath("//div[@class='fileUpload btn btn-primary']//following::button[contains (text(), 'Save')][1]")); 
+		try
+		{
+		TestUtil.VisibleOn(driver, SaveButton, 50);
+		TestUtil.ActionForMovetoElement(SaveButton);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Element-SaveButton is  not seen with in 30 sec");
+		}
+		
 		SaveButton.click();
 		
 	}
@@ -122,19 +142,23 @@ public class PatientRegistrationPage extends TestBase
 		}
 		catch(Exception e)
 		{
-			System.out.println("Exception is seen");
+			System.out.println("Element-choosephoto is not seen within 50 sec");
 		}
 		choosephoto.click();
 		try
 		{
-			TestUtil.VisibleOn(driver, upload, 30);
+			TestUtil.VisibleOn(driver, upload, 50);
 			TestUtil.ActionForMovetoElement(upload);
 		}
 		catch(Exception e)
 		{
-			System.out.println("Exception is seen");
+			System.out.println("Element-upload is not seen with in50 sec");
 		}
 		upload.click();
+		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", upload);*/
+		
+		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e1) 
@@ -142,16 +166,76 @@ public class PatientRegistrationPage extends TestBase
 			System.out.println("InterruptedException is seen");
 		}
 		try {
-			Runtime.getRuntime().exec("C:\\Parag\\Git\\IVFmilan\\AutoIT\\FileUpload.exe");
+			Runtime.getRuntime().exec("C:\\Parag\\Git\\IVFmilan\\AutoIT\\Patientupload\\patient.exe");
 		} catch (IOException e) 
 		{
 			System.out.println("IOException is seen");
 		}
-		WebElement SaveButton = driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[5]")); 
+			
+		WebElement SaveButton = driver.findElement(By.xpath("(//div[@class='modal-footer']/button[contains (text(), 'Close')]//preceding-sibling::button[contains (text() , 'Save')])[1]"));
+		TestUtil.ActionForMovetoElement(SaveButton);
+		/*try
+		{
+			TestUtil.ClickOn(driver, SaveButton, 30);		
+		}
+		catch(Exception e)
+		{
+		System.out.println(e.getStackTrace());
+		}*/
+		try {
+			Thread.sleep(3000);// this sleep used to stop execution of script because photo upload required time.
+		} 
+		catch (InterruptedException e) 
+		{
+			System.out.println("InterruptedException is seen");
+		}
 		SaveButton.click();
 		
+				
+	}
+	
+	
+	public String UploadPatientphotoTest()
+	{
+		try 
+		{
+			Thread.sleep(3000);
+		} 
+		catch (InterruptedException e2) 
+		{
+			System.out.println("InterruptedException is seen");
+		}
+		TestUtil.ActionForMovetoElement(photoclick);
+		try
+		{
+			TestUtil.ClickOn(driver, photoclick, 30);// used to click the element
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Element- photoclick is not seen within 50 sec");
+		}
+		try 
+		{
+			Thread.sleep(3000);
+		} 
+		catch (InterruptedException e1)
+		{
+			System.out.println("InterruptedException is seen");
+		}
+		TestUtil.ActionForMovetoElement(Phototext);
+		try
+		{
+			TestUtil.VisibleOn(driver, Phototext, 30);
+		}
+		catch(Exception e)
+		{
+		System.out.println("Element- Phototext is not seen with in 30 sec");
+		}
+		msg = Phototext.getText();
 		
 		
+		return msg;
 		
 	}
 	public  String UloadPictureOFPatientMessage()
@@ -169,7 +253,7 @@ public class PatientRegistrationPage extends TestBase
 		}
 		LinkbuttonforAttachpagePatient.click();
 				
-		WebElement SaveButton = driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[5]"));
+		WebElement SaveButton = driver.findElement(By.xpath("(//h4[contains (text(), 'Photo')]//following::button[contains (text() , 'Save')])[1]"));
 		
 		try
 		{
@@ -198,20 +282,22 @@ public class PatientRegistrationPage extends TestBase
 	
 	public void FillMandetoryFieldsPatient()
 	{
-		try
+		try 
 		{
-		TestUtil.VisibleOn(driver, patientFirstName, 30);
-		TestUtil.ActionForMovetoElement(patientFirstName);
-		}
-		catch(Exception e)
+			Thread.sleep(5000);
+		} 
+		catch (InterruptedException e1) 
 		{
-			System.out.println("Element-FirstName is not seen within30 sec");
+			System.out.println("InterruptedException is seen");
+			
 		}
+		TestUtil.VisibleOn(driver, patientFirstName, 50);
 		patientFirstName.clear();
 		String PatientFirst=reader.getCellData("RegistrationPage", "PatientFirstName", 2); 
+		TestUtil.ActionForMovetoElement(patientFirstName);
 		patientFirstName.sendKeys(PatientFirst);
 		String PatientLast =reader.getCellData("RegistrationPage", "PatientLastName", 2); 
-		patientLastName.clear();
+		patientLastName.clear();		
 		patientLastName.sendKeys(PatientLast);
 		Select BOBPaitY1 = new Select(dOBPaitY);
 		String year= reader.getCellData("RegistrationPage", "PatientDOBYear", 2);
@@ -223,29 +309,35 @@ public class PatientRegistrationPage extends TestBase
 		Select DODPaitD1 = new Select(dOBPaitD);
 		DODPaitD1.selectByVisibleText(Day);
 		CountryCodePait.clear();
-		CountryCodePait.sendKeys("91");
+		CountryCodePait.sendKeys("97");
+	List<WebElement>list = driver.findElements(By.xpath("//ul[@class='dropdown-menu ng-isolate-scope']/li"));
+		for(WebElement we:list)
+		{
+			if (we.equals("97"));
+			{
+				we.click();
+				break;
+			}
+		}
 		MobileNoPait.clear();
 		String MbileNoPatient=reader.getCellData("RegistrationPage", "MobileNoPatient", 2);
 		MobileNoPait.sendKeys(MbileNoPatient);
-		
-		
-		
-		
-		
-		
-		
+				
 	}
 	public void FillMandetoryFieldsPartner()
 	{
-		try
+		try 
 		{
-		TestUtil.VisibleOn(driver, partnerFirstName, 30);
+			Thread.sleep(5000);
+		} 
+		catch (InterruptedException e1) 
+		{
+			System.out.println("InterruptedException is seen");
+			
+		}
+		
+		TestUtil.VisibleOn(driver, partnerFirstName, 50);
 		TestUtil.ActionForMovetoElement(partnerFirstName);
-		}
-		catch(Exception e)
-		{
-			System.out.println("Element-partnerFirstName is not seen within30 sec");
-		}
 		partnerFirstName.clear();
 		String PartnerFirst=reader.getCellData("RegistrationPage", "PartnerFirstName", 2); 
 		partnerFirstName.sendKeys(PartnerFirst);
@@ -262,7 +354,18 @@ public class PatientRegistrationPage extends TestBase
 		String Day= reader.getCellData("RegistrationPage", "PartnerDOBDay", 2);
 		DODPartnerDay.selectByVisibleText(Day);
 		CountryCodeParnt.clear();
-		CountryCodeParnt.sendKeys("91");
+		CountryCodeParnt.sendKeys("97");
+		List<WebElement>list = driver.findElements(By.xpath("//ul[@class='dropdown-menu ng-isolate-scope']/li"));
+		
+		for(WebElement we1:list)
+		{
+			if ( we1.equals("97"));
+			{
+				we1.click();
+				break;
+			}	
+		}
+		
 		MobileNoPartn.clear();
 		String MobilePartner=reader.getCellData("RegistrationPage", "MobileNoPartner", 2);
 		MobileNoPartn.sendKeys(MobilePartner);
@@ -306,18 +409,26 @@ public class PatientRegistrationPage extends TestBase
 	
 	public void FillRegistrationForm()
 	{
-		UloadPictureOFPatient();
-		UloadPictureOFPartner();
-		FillMandetoryFieldsPatient();
-		FillMandetoryFieldsPartner();
 		
-		try {
+		
+		
+		UloadPictureOFPatient();
+		try 
+		{
 			Thread.sleep(2000);
 		} catch (InterruptedException e)
 		{
 			System.out.println("InterruptedException is seen");
 		}
 		UloadPictureOFPartner();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) 
+		{
+			System.out.println("InterruptedException is seen");
+		}
+		FillMandetoryFieldsPatient();
+		FillMandetoryFieldsPartner();
 			
 	}
 	
